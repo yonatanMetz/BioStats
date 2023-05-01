@@ -56,7 +56,8 @@ Dataset[TL_patients, "yellow"] <- Dataset[TL_patients, "minor"]
 Dataset[TL_patients, "red"] <- Dataset[TL_patients, "major"]
 
 #Remove doctors that have less than 10 patients
-busyMD <- Dataset[MDsummary[Dataset$MD] > 10,]
+
+busyMD <- Dataset[summary(Dataset$MD)[Dataset$MD] > 10,]
 
 library(caret)
 
